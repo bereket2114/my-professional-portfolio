@@ -101,7 +101,7 @@
     "name": "Hossana-Gofer-Meda-MKC",
     "title": "Hossana Gofer Meda MKC Community Portal",
     "description": "A community portal and landing page built with modern responsive styling, event schedules, multimedia showcase, and accessible navigation.",
-    "language": "CSS",
+    "language": "EJS",
     "tags": [
       "HTML5",
       "CSS3",
