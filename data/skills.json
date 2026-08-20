@@ -1,0 +1,121 @@
+[
+  {
+    "id": "skill-js",
+    "name": "JavaScript (ES6+)",
+    "category": "Frontend",
+    "level": "Advanced",
+    "icon": "javascript",
+    "description": "Modern asynchronous JS, Closures, DOM Manipulation, Promises, Event Loop",
+    "order": 1
+  },
+  {
+    "id": "skill-node",
+    "name": "Node.js",
+    "category": "Backend",
+    "level": "Advanced",
+    "icon": "nodejs",
+    "description": "Server runtime, Event-driven architecture, File system, Async I/O, npm ecosystem",
+    "order": 2
+  },
+  {
+    "id": "skill-express",
+    "name": "Express.js",
+    "category": "Backend",
+    "level": "Advanced",
+    "icon": "express",
+    "description": "Middleware pipelines, RESTful routing, Authentication, Error handling",
+    "order": 3
+  },
+  {
+    "id": "skill-react",
+    "name": "React.js",
+    "category": "Frontend",
+    "level": "Intermediate",
+    "icon": "react",
+    "description": "Component architecture, Hooks, State management, SPA routing, Virtual DOM",
+    "order": 4
+  },
+  {
+    "id": "skill-ejs",
+    "name": "EJS",
+    "category": "Frontend",
+    "level": "Advanced",
+    "icon": "ejs",
+    "description": "Server-side template rendering, dynamic partials, data-binding in Express",
+    "order": 5
+  },
+  {
+    "id": "skill-mongodb",
+    "name": "MongoDB",
+    "category": "Database",
+    "level": "Intermediate",
+    "icon": "mongodb",
+    "description": "NoSQL schema design, Mongoose ORM, Aggregations, CRUD operations",
+    "order": 6
+  },
+  {
+    "id": "skill-tailwind",
+    "name": "Tailwind CSS",
+    "category": "Frontend",
+    "level": "Advanced",
+    "icon": "tailwind",
+    "description": "Utility-first responsive design, Dark mode, Custom design tokens, Flexbox/Grid",
+    "order": 7
+  },
+  {
+    "id": "skill-html5",
+    "name": "HTML5",
+    "category": "Frontend",
+    "level": "Advanced",
+    "icon": "html5",
+    "description": "Semantic web structure, Modern forms, Accessibility (a11y), SEO standards",
+    "order": 8
+  },
+  {
+    "id": "skill-css3",
+    "name": "CSS3",
+    "category": "Frontend",
+    "level": "Advanced",
+    "icon": "css3",
+    "description": "Animations, Glassmorphism, Responsive media queries, Custom properties",
+    "order": 9
+  },
+  {
+    "id": "skill-git",
+    "name": "Git",
+    "category": "Tools & DevOps",
+    "level": "Advanced",
+    "icon": "git",
+    "description": "Version control, Branching strategies, Merging, Rebase, Conflict resolution",
+    "order": 10
+  },
+  {
+    "id": "skill-github",
+    "name": "GitHub",
+    "category": "Tools & DevOps",
+    "level": "Advanced",
+    "icon": "github",
+    "description": "Collaborative workflows, Pull Requests, Code reviews, GitHub Actions, Pages",
+    "order": 11
+  },
+  {
+    "id": "skill-rest",
+    "name": "REST APIs",
+    "category": "Backend",
+    "level": "Advanced",
+    "icon": "api",
+    "description": "API design, HTTP methods, Status codes, JSON payloads, Integration & Postman",
+    "order": 12
+  },
+  {
+    "id": "skill-1787244584483-e9vn",
+    "name": "TypeScript",
+    "category": "Frontend",
+    "level": "Advanced",
+    "icon": "code",
+    "description": "",
+    "order": 13,
+    "createdAt": "2026-08-20T16:49:44.483Z",
+    "updatedAt": "2026-08-20T16:49:44.483Z"
+  }
+]

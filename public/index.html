@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bereket Woldemariyam | Full-Stack Web Developer</title>
+  <meta name="description" content="Portfolio of Bereket Woldemariyam - Passionate Full-Stack Web Developer with a background in Civil Engineering, building responsive web applications, RESTful APIs, and modern digital experiences.">
+  <meta name="author" content="Bereket Woldemariyam">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              200: '#c7d2fe',
+              300: '#a5b4fc',
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              800: '#3730a3',
+              900: '#312e81',
+              950: '#1e1b4b'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            heading: ['"Outfit"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen flex flex-col relative selection:bg-indigo-500 selection:text-white transition-colors duration-300">
+
+  <!-- Ambient Background Glow Elements -->
+  <div class="bg-blob-1 w-[550px] h-[550px] rounded-full bg-indigo-600/20 dark:bg-indigo-600/15 top-[-100px] left-[-100px]"></div>
+  <div class="bg-blob-2 w-[500px] h-[500px] rounded-full bg-purple-600/20 dark:bg-purple-600/15 top-[30%] right-[-120px]"></div>
+  <div class="bg-blob-1 w-[600px] h-[600px] rounded-full bg-cyan-600/15 dark:bg-cyan-600/10 bottom-[10%] left-[-150px]"></div>
+
+  <!-- =========================================================
+       NAVIGATION BAR
+       ========================================================= -->
+  <header class="sticky top-0 z-40 w-full glass-nav bg-white/75 dark:bg-slate-950/75 border-b border-slate-200/80 dark:border-slate-800/80 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 flex items-center justify-center text-white font-black text-lg shadow-lg shadow-indigo-500/25 group-hover:scale-105 transition-transform">
+          BW
+        </div>
+        <div>
+          <span class="font-heading font-extrabold text-lg text-slate-900 dark:text-white tracking-tight block leading-tight group-hover:text-indigo-500 transition-colors">
+            Bereket Woldemariyam
+          </span>
+          <span class="text-xs text-slate-500 dark:text-slate-400 font-medium">
+            Full-Stack Web Developer
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600 dark:text-slate-300">
+        <a href="#about" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">About</a>
+        <a href="#skills" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Skills</a>
+        <a href="#projects" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Projects</a>
+        <a href="#engineering" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Engineering Background</a>
+        <a href="#contact" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Contact</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="flex items-center gap-3">
+        <!-- Quick GitHub Sync Button -->
+        <button 
+          type="button"
+          class="sync-github-btn hidden sm:inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800/90 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700/80 transition-all shadow-sm"
+          title="Synchronize projects with GitHub API">
+          <svg class="sync-icon w-3.5 h-3.5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+          </svg>
+          <span>Sync GitHub</span>
+        </button>
+
+        <!-- Dark / Light Mode Switcher -->
+        <button 
+          type="button" 
+          class="theme-toggle-btn p-2.5 rounded-xl text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition"
+          aria-label="Toggle Dark Mode">
+          <!-- Sun Icon (shown in dark mode) -->
+          <svg class="theme-icon-sun w-4 h-4 text-amber-400 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+          <!-- Moon Icon (shown in light mode) -->
+          <svg class="theme-icon-moon w-4 h-4 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+        </button>
+
+        <!-- GitHub Profile Link -->
+        <a 
+          href="https://github.com/bereket2114" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="p-2.5 rounded-xl text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition"
+          title="Visit Bereket's GitHub Profile">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+
+        <!-- Mobile Hamburger Button -->
+        <button 
+          id="mobile-menu-btn"
+          type="button" 
+          class="md:hidden p-2.5 rounded-xl text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800"
+          aria-label="Toggle navigation menu">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-6 space-y-3 bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 text-sm font-semibold">
+      <a href="#about" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">About</a>
+      <a href="#skills" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Skills</a>
+      <a href="#projects" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Projects</a>
+      <a href="#engineering" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Engineering Background</a>
+      <a href="#contact" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Contact</a>
+      <div class="pt-2 border-t border-slate-200 dark:border-slate-800">
+        <button type="button" class="sync-github-btn w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-indigo-600 text-white font-bold">
+          <svg class="sync-icon w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+          Sync GitHub Repositories
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       MAIN CONTENT CONTAINER
+       ========================================================= -->
+  <main class="flex-grow z-10">
+
+    <!-- =======================================================
+         HERO SECTION
+         ======================================================= -->
+    <section id="about" class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Left Hero Column: Introduction & Summary -->
+          <div class="lg:col-span-8 space-y-6">
+            
+            <!-- Status Badge -->
+            <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/60 shadow-sm">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 pulse-badge"></span>
+              <span>Available for Full-Stack & Frontend Engineering Roles</span>
+            </div>
+
+            <!-- Main Heading & Title -->
+            <div>
+              <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight leading-[1.1] mb-3">
+                Hi, I'm <span id="hero-name" class="gradient-text">Bereket Woldemariyam</span>
+              </h1>
+              <div class="flex items-center gap-3 flex-wrap">
+                <h2 id="hero-title" class="text-2xl sm:text-3xl font-bold text-slate-700 dark:text-slate-200">
+                  Full-Stack Web Developer
+                </h2>
+                <span class="px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider bg-indigo-100 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800">
+                  Civil Engineering Background
+                </span>
+              </div>
+            </div>
+
+            <!-- Personal Summary -->
+            <p id="hero-summary" class="text-lg sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl font-normal">
+              Passionate Full-Stack Web Developer with a background in Civil Engineering, focused on building responsive web applications, RESTful APIs, and modern digital experiences.
+            </p>
+
+            <!-- Detailed Bio Snippet -->
+            <p id="about-bio-text" class="text-sm sm:text-base text-slate-500 dark:text-slate-400 leading-relaxed max-w-2xl">
+              With a rigorous background in Civil Engineering, I bring analytical problem-solving, structural precision, and architectural discipline to modern software development. I specialize in building responsive, scalable full-stack web applications with Node.js, Express, React, and MongoDB, crafting clean code and intuitive user interfaces.
+            </p>
+
+            <!-- Hero Action Buttons -->
+            <div class="flex flex-wrap items-center gap-4 pt-2">
+              <a 
+                href="#projects" 
+                class="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl font-bold text-sm text-white bg-gradient-to-r from-indigo-600 via-indigo-500 to-purple-600 hover:from-indigo-500 hover:to-purple-500 shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:-translate-y-0.5 transition-all">
+                <span>Explore Projects</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+              </a>
+
+              <a 
+                href="#contact" 
+                class="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl font-bold text-sm text-slate-800 dark:text-slate-100 bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 shadow-sm hover:-translate-y-0.5 transition-all">
+                <span>Get In Touch</span>
+                <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+              </a>
+
+              <button 
+                type="button"
+                class="sync-github-btn inline-flex items-center gap-2 px-5 py-3.5 rounded-2xl font-semibold text-sm text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950/60 hover:bg-indigo-100 dark:hover:bg-indigo-900/60 border border-indigo-200/80 dark:border-indigo-800/80 transition-all">
+                <svg class="sync-icon w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                <span>Sync GitHub Repos</span>
+              </button>
+            </div>
+
+            <!-- Social Links Quick Strip -->
+            <div class="flex items-center gap-5 pt-4 text-slate-500 dark:text-slate-400 text-sm">
+              <span class="text-xs uppercase tracking-wider font-bold text-slate-400">Connect:</span>
+              <a 
+                id="hero-github-link"
+                href="https://github.com/bereket2114" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="flex items-center gap-1.5 hover:text-slate-900 dark:hover:text-white font-medium transition-colors">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                <span>GitHub (@bereket2114)</span>
+              </a>
+
+              <a 
+                id="hero-linkedin-link"
+                href="https://linkedin.com/in/bereket-woldemariyam" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="flex items-center gap-1.5 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition-colors">
+                <svg class="w-4 h-4 fill-current text-[#0a66c2]" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <span>LinkedIn</span>
+              </a>
+
+              <button 
+                id="copy-email-btn"
+                type="button" 
+                class="flex items-center gap-1.5 hover:text-slate-900 dark:hover:text-white font-medium transition-colors cursor-pointer"
+                title="Click to copy email address">
+                <svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                <span>bereket2114@gmail.com</span>
+              </button>
+            </div>
+
+          </div>
+
+          <!-- Right Hero Column: Interactive Card / Highlights -->
+          <div class="lg:col-span-4">
+            <div class="relative">
+              
+              <!-- Engineering Spotlight Card -->
+              <div class="glass-card bg-white/90 dark:bg-slate-900/90 rounded-3xl p-6 sm:p-8 border border-slate-200/90 dark:border-slate-800 shadow-xl relative z-10">
+                
+                <div class="flex items-center justify-between mb-6">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950/80 flex items-center justify-center text-indigo-600 dark:text-indigo-400">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                    </div>
+                    <div>
+                      <h3 class="font-bold text-slate-900 dark:text-white text-base">Core Discipline</h3>
+                      <p class="text-xs text-slate-500 dark:text-slate-400">Engineering Mindset</p>
+                    </div>
+                  </div>
+                  <span class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300">
+                    Full-Stack
+                  </span>
+                </div>
+
+                <div class="space-y-4 text-xs sm:text-sm">
+                  <div class="flex items-start gap-3 p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
+                    <div class="w-6 h-6 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center flex-shrink-0 font-bold">
+                      ✓
+                    </div>
+                    <div>
+                      <span class="font-bold text-slate-900 dark:text-white block">Structural Problem Solving</span>
+                      <span class="text-slate-500 dark:text-slate-400 text-xs">Applying physical engineering rigor to system architecture & database schema integrity.</span>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-3 p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
+                    <div class="w-6 h-6 rounded-lg bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center flex-shrink-0 font-bold">
+                      ✓
+                    </div>
+                    <div>
+                      <span class="font-bold text-slate-900 dark:text-white block">Full-Stack Scalability</span>
+                      <span class="text-slate-500 dark:text-slate-400 text-xs">REST APIs, Node.js event pipelines, MongoDB persistence, and responsive Tailwind interfaces.</span>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-3 p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
+                    <div class="w-6 h-6 rounded-lg bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center flex-shrink-0 font-bold">
+                      ✓
+                    </div>
+                    <div>
+                      <span class="font-bold text-slate-900 dark:text-white block">GitHub Synchronization</span>
+                      <span class="text-slate-500 dark:text-slate-400 text-xs">Live REST integration fetching real repos, star counts, and demo links dynamically.</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- =======================================================
+             LIVE METRICS STRIP
+             ======================================================= -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 pt-8 border-t border-slate-200/80 dark:border-slate-800/80">
+          
+          <div class="p-5 rounded-2xl bg-white/70 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800 backdrop-blur-md">
+            <span class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 block mb-1">Active Projects</span>
+            <div class="flex items-baseline gap-2">
+              <span id="stat-total-projects" class="text-3xl font-extrabold font-heading text-indigo-600 dark:text-indigo-400">8</span>
+              <span class="text-xs text-slate-400 font-medium">Showcased</span>
+            </div>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-white/70 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800 backdrop-blur-md">
+            <span class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 block mb-1">Core Tech Skills</span>
+            <div class="flex items-baseline gap-2">
+              <span id="stat-total-skills" class="text-3xl font-extrabold font-heading text-purple-600 dark:text-purple-400">12</span>
+              <span class="text-xs text-slate-400 font-medium">Categorized</span>
+            </div>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-white/70 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800 backdrop-blur-md">
+            <span class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 block mb-1">GitHub Repos</span>
+            <div class="flex items-baseline gap-2">
+              <span class="text-3xl font-extrabold font-heading text-emerald-600 dark:text-emerald-400">9+</span>
+              <span class="text-xs text-slate-400 font-medium">Live Synced</span>
+            </div>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-white/70 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800 backdrop-blur-md">
+            <span class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 block mb-1">Database Mode</span>
+            <div class="flex items-baseline gap-2">
+              <span id="storage-mode-badge" class="text-sm font-extrabold font-heading text-cyan-600 dark:text-cyan-400 truncate">JSON / MongoDB</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =======================================================
+         INTERACTIVE SKILLS SECTION (CRUD)
+         ======================================================= -->
+    <section id="skills" class="py-16 md:py-24 bg-slate-100/60 dark:bg-slate-900/40 border-y border-slate-200/80 dark:border-slate-800/80 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header & Controls -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800 mb-3">
+              <span>Dynamic Tech Stack</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white">
+              Skills & Proficiencies
+            </h2>
+            <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-xl mt-1">
+              Fully interactive skills inventory. Add new technical badges, update proficiencies, or manage categories dynamically on the fly.
+            </p>
+          </div>
+
+          <!-- Skills Action Buttons -->
+          <div class="flex items-center gap-3 flex-wrap">
+            <button 
+              id="add-skill-btn"
+              type="button" 
+              class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs text-white bg-indigo-600 hover:bg-indigo-500 shadow-md shadow-indigo-500/20 transition-all">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+              <span>Add Skill</span>
+            </button>
+
+            <button 
+              id="reset-skills-btn"
+              type="button" 
+              class="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl font-medium text-xs text-slate-600 dark:text-slate-400 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 transition"
+              title="Reset skills list to original defaults">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+              <span>Reset Defaults</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Filter Tabs & Search Bar -->
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8">
+          
+          <!-- Category Filter Buttons -->
+          <div class="flex items-center gap-2 overflow-x-auto w-full sm:w-auto pb-2 sm:pb-0">
+            <button type="button" class="skill-filter-btn active px-4 py-2 rounded-xl text-xs font-bold bg-indigo-600 text-white transition-all shadow-sm flex-shrink-0" data-category="All">
+              All Skills
+            </button>
+            <button type="button" class="skill-filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all flex-shrink-0" data-category="Frontend">
+              Frontend
+            </button>
+            <button type="button" class="skill-filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all flex-shrink-0" data-category="Backend">
+              Backend
+            </button>
+            <button type="button" class="skill-filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all flex-shrink-0" data-category="Database">
+              Database
+            </button>
+            <button type="button" class="skill-filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all flex-shrink-0" data-category="Tools & DevOps">
+              Tools & DevOps
+            </button>
+          </div>
+
+          <!-- Search Box -->
+          <div class="relative w-full sm:w-64">
+            <input 
+              id="skill-search-input"
+              type="text" 
+              placeholder="Search skills..." 
+              class="w-full pl-9 pr-4 py-2 rounded-xl text-xs bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition">
+            <svg class="w-4 h-4 text-slate-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          </div>
+
+        </div>
+
+        <!-- Dynamic Skills Grid -->
+        <div id="skills-list-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <!-- Populated dynamically by app.js -->
+        </div>
+
+        <!-- Skills Empty State -->
+        <div id="skills-empty-state" class="hidden text-center py-12">
+          <p class="text-slate-400 text-sm">No skills found matching your filter criteria.</p>
+          <button type="button" onclick="App.loadData()" class="mt-3 text-xs text-indigo-500 hover:underline">Reload all skills</button>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =======================================================
+         DYNAMIC PROJECTS SECTION (CRUD & GITHUB INTEGRATION)
+         ======================================================= -->
+    <section id="projects" class="py-16 md:py-24 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header & Actions -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800 mb-3">
+              <span>GitHub REST API Integration</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white">
+              Featured Web Projects
+            </h2>
+            <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-xl mt-1">
+              Live projects synchronized directly from GitHub (<code class="font-mono text-xs text-indigo-500 font-semibold">@bereket2114</code>). Edit details, update live demo URLs, or manage showcase visibility.
+            </p>
+          </div>
+
+          <!-- Project Actions -->
+          <div class="flex items-center gap-3 flex-wrap">
+            <button 
+              type="button" 
+              class="sync-github-btn inline-flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 shadow-md shadow-indigo-500/20 transition-all">
+              <svg class="sync-icon w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+              <span>Sync GitHub Repos</span>
+            </button>
+
+            <button 
+              id="add-project-btn"
+              type="button" 
+              class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 transition shadow-sm">
+              <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+              <span>Add Custom Project</span>
+            </button>
+
+            <button 
+              id="reset-projects-btn"
+              type="button" 
+              class="inline-flex items-center gap-1.5 px-3 py-2.5 rounded-xl font-medium text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 transition"
+              title="Reset projects to initial curated state">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+              <span>Reset</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Filter & Search Controls -->
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8">
+          
+          <!-- Category Filter Buttons -->
+          <div class="flex items-center gap-2 overflow-x-auto w-full sm:w-auto pb-2 sm:pb-0">
+            <button type="button" class="project-filter-btn active px-4 py-2 rounded-xl text-xs font-bold bg-indigo-600 text-white transition-all shadow-sm flex-shrink-0" data-category="All">
+              All Projects
+            </button>
+            <button type="button" class="project-filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all flex-shrink-0" data-category="Full-Stack">
+              Full-Stack
+            </button>
+            <button type="button" class="project-filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all flex-shrink-0" data-category="Frontend">
+              Frontend
+            </button>
+            <button type="button" class="project-filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all flex-shrink-0" data-category="Games & Tools">
+              Games & Tools
+            </button>
+            <button type="button" class="project-filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all flex-shrink-0" data-category="Algorithms">
+              Algorithms
+            </button>
+          </div>
+
+          <!-- Project Search -->
+          <div class="relative w-full sm:w-72">
+            <input 
+              id="project-search-input"
+              type="text" 
+              placeholder="Search projects by tech, title..." 
+              class="w-full pl-9 pr-4 py-2 rounded-xl text-xs bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition">
+            <svg class="w-4 h-4 text-slate-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          </div>
+
+        </div>
+
+        <!-- Dynamic Projects Grid -->
+        <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Populated dynamically by app.js -->
+        </div>
+
+        <!-- Projects Empty State -->
+        <div id="projects-empty-state" class="hidden text-center py-16">
+          <div class="w-16 h-16 rounded-3xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400 mx-auto mb-4">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"></path></svg>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">No Projects Found</h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mb-4">Try adjusting your search query or sync fresh from GitHub.</p>
+          <button type="button" class="sync-github-btn px-4 py-2 rounded-xl text-xs font-bold text-white bg-indigo-600">
+            Sync GitHub Repositories
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =======================================================
+         CIVIL ENGINEERING BACKGROUND SPOTLIGHT
+         ======================================================= -->
+    <section id="engineering" class="py-16 md:py-24 bg-gradient-to-b from-slate-100/80 to-white dark:from-slate-900/60 dark:to-slate-950 border-t border-slate-200/80 dark:border-slate-800/80 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-purple-50 dark:bg-purple-950 text-purple-600 dark:text-purple-400 border border-purple-200 dark:border-purple-800 mb-3">
+            <span>The Engineer's Advantage</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white">
+            From Civil Engineering to Full-Stack Web Architecture
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-2">
+            Engineering isn't just about civil infrastructure—it's a mindset of structural integrity, precision, load management, and systematic execution applied directly to modern software systems.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <div class="glass-card p-8 rounded-3xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 shadow-md">
+            <div class="w-12 h-12 rounded-2xl bg-indigo-50 dark:bg-indigo-950/80 flex items-center justify-center text-indigo-600 dark:text-indigo-400 mb-5">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Structural Foundation & Design</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              Just as physical buildings require solid structural foundations, web apps require bulletproof database schemas, robust RESTful APIs, and predictable state pipelines.
+            </p>
+          </div>
+
+          <div class="glass-card p-8 rounded-3xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 shadow-md">
+            <div class="w-12 h-12 rounded-2xl bg-purple-50 dark:bg-purple-950/80 flex items-center justify-center text-purple-600 dark:text-purple-400 mb-5">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Analytical Precision & Testing</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              Mathematical modeling and tolerance analysis translate to clean algorithmic logic, defensive programming, edge-case mitigation, and high-performance frontend rendering.
+            </p>
+          </div>
+
+          <div class="glass-card p-8 rounded-3xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 shadow-md">
+            <div class="w-12 h-12 rounded-2xl bg-cyan-50 dark:bg-cyan-950/80 flex items-center justify-center text-cyan-600 dark:text-cyan-400 mb-5">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Continuous Execution & Speed</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              Managing real-world civil engineering workflows shaped a disciplined focus on project delivery, modular maintenance, and turning complex project roadmaps into steady progress.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =======================================================
+         INTERACTIVE CONTACT SECTION
+         ======================================================= -->
+    <section id="contact" class="py-16 md:py-24 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          
+          <!-- Contact Info Column -->
+          <div class="lg:col-span-5 space-y-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800">
+              <span>Let's Build Together</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white">
+              Get In Touch
+            </h2>
+            <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
+              Have a project, opportunity, or idea? Reach out directly via the message form or connect via GitHub and LinkedIn.
+            </p>
+
+            <div class="space-y-4 pt-2">
+              <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/70 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800">
+                <div class="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                </div>
+                <div>
+                  <span class="text-xs text-slate-400 block font-medium">Email</span>
+                  <a href="mailto:bereket2114@gmail.com" class="text-sm font-bold text-slate-900 dark:text-white hover:text-indigo-600 transition">bereket2114@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/70 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800">
+                <div class="w-10 h-10 rounded-xl bg-purple-50 dark:bg-purple-950 text-purple-600 dark:text-purple-400 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </div>
+                <div>
+                  <span class="text-xs text-slate-400 block font-medium">GitHub</span>
+                  <a href="https://github.com/bereket2114" target="_blank" rel="noopener noreferrer" class="text-sm font-bold text-slate-900 dark:text-white hover:text-indigo-600 transition">github.com/bereket2114</a>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/70 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800">
+                <div class="w-10 h-10 rounded-xl bg-cyan-50 dark:bg-cyan-950 text-[#0a66c2] flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </div>
+                <div>
+                  <span class="text-xs text-slate-400 block font-medium">LinkedIn</span>
+                  <a href="https://linkedin.com/in/bereket-woldemariyam" target="_blank" rel="noopener noreferrer" class="text-sm font-bold text-slate-900 dark:text-white hover:text-indigo-600 transition">Bereket Woldemariyam</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Direct Message Form Column -->
+          <div class="lg:col-span-7">
+            <div class="glass-card bg-white/90 dark:bg-slate-900/90 rounded-3xl p-8 border border-slate-200/90 dark:border-slate-800 shadow-xl">
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6">Send a Direct Message</h3>
+
+              <form id="contact-form" class="space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="contact-name" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">Your Name *</label>
+                    <input 
+                      id="contact-name"
+                      type="text" 
+                      required 
+                      placeholder="e.g. John Doe"
+                      class="w-full px-4 py-3 rounded-xl text-sm bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                  </div>
+                  <div>
+                    <label for="contact-email" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">Your Email *</label>
+                    <input 
+                      id="contact-email"
+                      type="email" 
+                      required 
+                      placeholder="e.g. john@example.com"
+                      class="w-full px-4 py-3 rounded-xl text-sm bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                  </div>
+                </div>
+
+                <div>
+                  <label for="contact-subject" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">Subject</label>
+                  <input 
+                    id="contact-subject"
+                    type="text" 
+                    placeholder="Project Inquiry / Job Opportunity"
+                    class="w-full px-4 py-3 rounded-xl text-sm bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+
+                <div>
+                  <label for="contact-message" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">Message *</label>
+                  <textarea 
+                    id="contact-message"
+                    required 
+                    rows="4" 
+                    placeholder="Hi Bereket, I'd like to discuss a project..."
+                    class="w-full px-4 py-3 rounded-xl text-sm bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                </div>
+
+                <button 
+                  type="submit" 
+                  class="w-full py-3.5 rounded-2xl font-bold text-sm text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 transition-all">
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+  <footer class="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800/80 py-10 z-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-xl bg-indigo-600 flex items-center justify-center text-white font-bold text-sm">
+          BW
+        </div>
+        <div class="text-xs text-slate-500 dark:text-slate-400">
+          © 2026 Bereket Woldemariyam. Built with Node.js, Express & Tailwind CSS.
+        </div>
+      </div>
+
+      <div class="flex items-center gap-6 text-xs text-slate-500 dark:text-slate-400 font-medium">
+        <a href="#about" class="hover:text-indigo-600 transition">About</a>
+        <a href="#skills" class="hover:text-indigo-600 transition">Skills</a>
+        <a href="#projects" class="hover:text-indigo-600 transition">Projects</a>
+        <a href="#contact" class="hover:text-indigo-600 transition">Contact</a>
+        <a href="#" class="hover:text-indigo-600 transition flex items-center gap-1">
+          <span>Back to top</span>
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- =========================================================
+       MODALS & DIALOGS
+       ========================================================= -->
+  
+  <!-- 1. Skill Modal (Add / Edit) -->
+  <div id="skill-modal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm">
+    <div class="modal-content w-full max-w-md bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-2xl">
+      <div class="flex items-center justify-between mb-6">
+        <h3 id="skill-modal-title" class="text-xl font-bold text-slate-900 dark:text-white">Add Skill</h3>
+        <button type="button" data-close-modal class="p-2 rounded-xl text-slate-400 hover:text-slate-600 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <form id="skill-form" class="space-y-4">
+        <input type="hidden" id="skill-id" value="">
+
+        <div>
+          <label for="skill-name" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">Skill Name *</label>
+          <input 
+            id="skill-name" 
+            type="text" 
+            required 
+            placeholder="e.g. TypeScript, GraphQL, Docker"
+            class="w-full px-4 py-2.5 rounded-xl text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label for="skill-category" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">Category</label>
+            <select 
+              id="skill-category" 
+              class="w-full px-4 py-2.5 rounded-xl text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
+              <option value="Frontend">Frontend</option>
+              <option value="Backend">Backend</option>
+              <option value="Database">Database</option>
+              <option value="Tools & DevOps">Tools & DevOps</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="skill-level" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">Proficiency</label>
+            <select 
+              id="skill-level" 
+              class="w-full px-4 py-2.5 rounded-xl text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
+              <option value="Advanced">Advanced</option>
+              <option value="Expert">Expert</option>
+              <option value="Intermediate">Intermediate</option>
+              <option value="Beginner">Beginner</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label for="skill-icon" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">Icon / Tag Identifier</label>
+          <input 
+            id="skill-icon" 
+            type="text" 
+            placeholder="e.g. code, javascript, react, nodejs, git"
+            class="w-full px-4 py-2.5 rounded-xl text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
+        </div>
+
+        <div>
+          <label for="skill-desc" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">Short Description</label>
+          <textarea 
+            id="skill-desc" 
+            rows="2" 
+            placeholder="Brief overview of how you use this skill..."
+            class="w-full px-4 py-2.5 rounded-xl text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+        </div>
+
+        <div class="flex items-center justify-end gap-3 pt-4 border-t border-slate-100 dark:border-slate-800">
+          <button 
+            type="button" 
+            data-close-modal 
+            class="px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+            Cancel
+          </button>
+          <button 
+            type="submit" 
+            class="px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-indigo-600 hover:bg-indigo-500 shadow-md shadow-indigo-500/20 transition">
+            Save Skill
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- 2. Project Modal (Add / Edit) -->
+  <div id="project-modal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm">
+    <div class="modal-content w-full max-w-lg bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-2xl max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between mb-6">
+        <h3 id="project-modal-title" class="text-xl font-bold text-slate-900 dark:text-white">Edit Project</h3>
+        <button type="button" data-close-modal class="p-2 rounded-xl text-slate-400 hover:text-slate-600 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <form id="project-form" class="space-y-4">
+        <input type="hidden" id="project-id" value="">
+
+        <div>
+          <label for="project-title" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">Project Title *</label>
+          <input 
+            id="project-title" 
+            type="text" 
+            required 
+            placeholder="e.g. TaskFlow - Productivity App"
+            class="w-full px-4 py-2.5 rounded-xl text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
+        </div>
+
+        <div>
+          <label for="project-description" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">Description</label>
+          <textarea 
+            id="project-description" 
+            rows="3" 
+            placeholder="Detailed description of features, stack, and problem solved..."
+            class="w-full px-4 py-2.5 rounded-xl text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label for="project-language" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">Primary Language</label>
+            <input 
+              id="project-language" 
+              type="text" 
+              placeholder="e.g. JavaScript, EJS, HTML"
+              class="w-full px-4 py-2.5 rounded-xl text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
+          </div>
+
+          <div>
+            <label for="project-category" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">Category</label>
+            <select 
+              id="project-category" 
+              class="w-full px-4 py-2.5 rounded-xl text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
+              <option value="Full-Stack">Full-Stack</option>
+              <option value="Frontend">Frontend</option>
+              <option value="Backend">Backend</option>
+              <option value="Games & Tools">Games & Tools</option>
+              <option value="Algorithms">Algorithms</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label for="project-tags" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">Tech Tags (comma separated)</label>
+          <input 
+            id="project-tags" 
+            type="text" 
+            placeholder="Node.js, Express, EJS, Tailwind CSS, REST API"
+            class="w-full px-4 py-2.5 rounded-xl text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="project-homepage" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">Live Preview / Demo URL</label>
+            <input 
+              id="project-homepage" 
+              type="url" 
+              placeholder="https://app-name.vercel.app"
+              class="w-full px-4 py-2.5 rounded-xl text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
+          </div>
+
+          <div>
+            <label for="project-github" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">GitHub Repo URL</label>
+            <input 
+              id="project-github" 
+              type="url" 
+              placeholder="https://github.com/bereket2114/repo"
+              class="w-full px-4 py-2.5 rounded-xl text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 pt-2">
+          <input 
+            id="project-featured" 
+            type="checkbox" 
+            class="w-4 h-4 rounded text-indigo-600 focus:ring-indigo-500 border-slate-300 dark:border-slate-700">
+          <label for="project-featured" class="text-xs font-bold text-slate-700 dark:text-slate-300">Feature this project at top of showcase</label>
+        </div>
+
+        <div class="flex items-center justify-end gap-3 pt-4 border-t border-slate-100 dark:border-slate-800">
+          <button 
+            type="button" 
+            data-close-modal 
+            class="px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+            Cancel
+          </button>
+          <button 
+            type="submit" 
+            class="px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-indigo-600 hover:bg-indigo-500 shadow-md shadow-indigo-500/20 transition">
+            Save Project
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- 3. Delete Confirmation Dialog Modal -->
+  <div id="confirm-delete-modal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm">
+    <div class="modal-content w-full max-w-sm bg-white dark:bg-slate-900 rounded-3xl p-6 border border-rose-500/20 shadow-2xl text-center">
+      
+      <div class="w-12 h-12 rounded-2xl bg-rose-100 dark:bg-rose-950 text-rose-600 dark:text-rose-400 flex items-center justify-center mx-auto mb-4">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+      </div>
+
+      <h3 id="confirm-delete-title" class="text-lg font-bold text-slate-900 dark:text-white mb-1">Confirm Deletion</h3>
+      <p id="confirm-delete-message" class="text-xs text-slate-500 dark:text-slate-400 mb-2">Are you sure you want to delete this item? This action cannot be undone.</p>
+      <div id="confirm-delete-item-name" class="font-bold text-sm text-slate-800 dark:text-slate-200 mb-6 bg-slate-50 dark:bg-slate-800/60 py-1.5 px-3 rounded-lg truncate"></div>
+
+      <div class="flex items-center justify-center gap-3">
+        <button 
+          type="button" 
+          data-close-modal 
+          class="w-1/2 py-2.5 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition">
+          Cancel
+        </button>
+        <button 
+          id="confirm-delete-action-btn"
+          type="button" 
+          class="w-1/2 py-2.5 rounded-xl text-xs font-bold text-white bg-rose-600 hover:bg-rose-500 shadow-md shadow-rose-600/20 transition">
+          Delete
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- Toast Notifications Container -->
+  <div id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="/js/theme.js"></script>
+  <script src="/js/modalManager.js"></script>
+  <script src="/js/app.js"></script>
+
+</body>
+</html>
