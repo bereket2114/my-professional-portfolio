@@ -142,29 +142,6 @@
     "hidden": false
   },
   {
-    "id": "proj-1242498422",
-    "githubId": 1242498422,
-    "name": "rappersName",
-    "title": "Artist & Rapper Name Generator / API",
-    "description": "Lightweight Node/JavaScript application generating creative aliases and serving structured artist metadata through an intuitive endpoint.",
-    "language": "JavaScript",
-    "tags": [
-      "JavaScript",
-      "Node.js",
-      "Express.js",
-      "API Design"
-    ],
-    "stars": 0,
-    "forks": 0,
-    "githubUrl": "https://github.com/bereket2114/rappersName",
-    "homepage": "",
-    "featured": false,
-    "category": "Backend",
-    "updatedAt": "2026-05-19T12:25:44Z",
-    "isCustom": false,
-    "hidden": false
-  },
-  {
     "id": "proj-1254253552",
     "githubId": 1254253552,
     "name": "codewars-solutions",
