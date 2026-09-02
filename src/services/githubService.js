@@ -71,7 +71,7 @@ function inferTags(repo) {
  */
 function inferCategory(repo) {
   const nameLower = (repo.name || '').toLowerCase();
-  if (nameLower.includes('flow') || nameLower.includes('findly') || nameLower.includes('portfolio') || nameLower.includes('fullstack')) {
+  if (nameLower.includes('flow') || nameLower.includes('findly') || nameLower.includes('portfolio') || nameLower.includes('fullstack') || nameLower.includes('hossana')) {
     return 'Full-Stack';
   }
   if (nameLower.includes('game') || nameLower.includes('tool') || nameLower.includes('generator')) {
@@ -96,6 +96,8 @@ async function syncWithGithub() {
   let newlyAdded = 0;
   let updated = 0;
 
+  const defaultHiddenRepos = ['bereket2114', 'my_portfolio', 'rappersname'];
+
   // Filter out forks if desired or keep all
   const filteredRepos = rawRepos.filter(r => !r.fork);
 
@@ -105,6 +107,8 @@ async function syncWithGithub() {
     const existingIndex = mergedProjects.findIndex(
       p => p.githubId === repo.id || (p.name && p.name.toLowerCase() === repo.name.toLowerCase())
     );
+
+    const isDefaultHidden = defaultHiddenRepos.includes((repo.name || '').toLowerCase());
 
     if (existingIndex >= 0) {
       // Existing project: update stars, forks, githubUrl, updatedAt if not overridden
@@ -118,6 +122,8 @@ async function syncWithGithub() {
         homepage: current.customOverride && current.homepage ? current.homepage : (repo.homepage || current.homepage || ''),
         description: current.customOverride && current.description ? current.description : (repo.description || current.description || `Modern web project built with ${repo.language || 'JavaScript'}`),
         language: current.customOverride && current.language ? current.language : (repo.language || current.language || 'JavaScript'),
+        category: (current.name && current.name.toLowerCase().includes('hossana')) ? 'Full-Stack' : (current.category || inferCategory(repo)),
+        hidden: current.hidden || isDefaultHidden,
         updatedAt: repo.updated_at || current.updatedAt
       };
       updated++;
@@ -138,7 +144,7 @@ async function syncWithGithub() {
         featured: repo.stargazers_count > 0,
         category: inferCategory(repo),
         isCustom: false,
-        hidden: false,
+        hidden: isDefaultHidden,
         customOverride: false,
         updatedAt: repo.updated_at || new Date().toISOString()
       };

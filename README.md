@@ -203,7 +203,7 @@ vercel --prod
 - **Role**: Full-Stack Web Developer & Civil Engineer
 - **GitHub**: [@bereket2114](https://github.com/bereket2114)
 - **LinkedIn**: [linkedin.com/in/bereket-woldemariyam](https://linkedin.com/in/bereket-woldemariyam)
-- **Email**: bereket.woldemariyam@example.com
+- **Email**: [bereketwoldemariam369@gmail.com](mailto:bereketwoldemariam369@gmail.com)
 
 ---
 

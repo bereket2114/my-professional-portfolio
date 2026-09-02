@@ -219,21 +219,23 @@ router.post('/projects/reset', async (req, res, next) => {
   }
 });
 
+const emailService = require('../services/emailService');
+
 // ==========================================
 // CONTACT / INTERACTION ROUTE
 // ==========================================
-router.post('/contact', (req, res) => {
-  const { name, email, message, subject } = req.body;
-  if (!name || !email || !message) {
-    return res.status(400).json({ error: 'Name, email, and message are required fields.' });
+router.post('/contact', async (req, res, next) => {
+  try {
+    const { name, email, message, subject } = req.body;
+    if (!name || !email || !message) {
+      return res.status(400).json({ error: 'Name, email, and message are required fields.' });
+    }
+    
+    const result = await emailService.sendContactEmail({ name, email, message, subject });
+    res.json(result);
+  } catch (err) {
+    next(err);
   }
-  
-  console.log(`📨 [Contact Message Received] From: ${name} (${email}) | Subject: ${subject || 'General'} | Message: ${message}`);
-  
-  res.json({
-    success: true,
-    message: `Thank you, ${name}! Your message has been received. Bereket will get back to you soon.`
-  });
 });
 
 module.exports = router;

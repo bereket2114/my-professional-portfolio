@@ -8,7 +8,7 @@ const initialProfile = {
   summary: "Passionate Full-Stack Web Developer with a background in Civil Engineering, focused on building responsive web applications, RESTful APIs, and modern digital experiences.",
   detailedBio: "With a rigorous background in Civil Engineering, I bring analytical problem-solving, structural precision, and architectural discipline to modern software development. I specialize in building responsive, scalable full-stack web applications with Node.js, Express, React, and MongoDB, crafting clean code and intuitive user interfaces.",
   location: "Addis Ababa, Ethiopia",
-  email: "bereket2114@gmail.com",
+  email: "bereketwoldemariam369@gmail.com",
   github: "https://github.com/bereket2114",
   githubUsername: "bereket2114",
   linkedin: "https://linkedin.com/in/bereket-woldemariyam",
@@ -213,7 +213,7 @@ const initialProjects = [
     githubUrl: "https://github.com/bereket2114/Hossana-Gofer-Meda-MKC",
     homepage: "https://hossana-gofer-meda-mkc.vercel.app",
     featured: false,
-    category: "Frontend",
+    category: "Full-Stack",
     updatedAt: new Date().toISOString(),
     isCustom: false,
     hidden: false
@@ -252,7 +252,7 @@ const initialProjects = [
     category: "Backend",
     updatedAt: new Date().toISOString(),
     isCustom: false,
-    hidden: false
+    hidden: true
   },
   {
     id: "proj-1254253552",

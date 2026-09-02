@@ -32,9 +32,10 @@ function getStorageMode() {
 // Profile
 async function getProfile() {
   if (db.getIsConnected()) {
-    let profile = await ProfileModel.findOne().lean();
+    let profile = await ProfileModel.findOne({ name: { $exists: true } }).lean();
     if (!profile) {
-      profile = await ProfileModel.create(initialProfile);
+      const created = await ProfileModel.create(initialProfile);
+      profile = created.toObject ? created.toObject() : created;
     }
     return profile;
   }

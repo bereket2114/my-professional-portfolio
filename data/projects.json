@@ -181,7 +181,7 @@
     "featured": false,
     "category": "Full-Stack",
     "isCustom": false,
-    "hidden": false,
+    "hidden": true,
     "customOverride": false,
     "updatedAt": "2026-08-20T10:44:19Z"
   }

@@ -117,17 +117,30 @@ const App = (function () {
 
     const heroName = document.getElementById('hero-name');
     const heroTitle = document.getElementById('hero-title');
+    const brandName = document.getElementById('brand-name');
+    const brandTitle = document.getElementById('brand-title');
     const heroSummary = document.getElementById('hero-summary');
     const bioText = document.getElementById('about-bio-text');
     const githubLink = document.getElementById('hero-github-link');
     const linkedinLink = document.getElementById('hero-linkedin-link');
 
-    if (heroName) heroName.textContent = p.name;
-    if (heroTitle) heroTitle.textContent = p.title;
-    if (heroSummary) heroSummary.textContent = p.summary;
+    if (heroName && p.name) heroName.textContent = p.name;
+    if (heroTitle && p.title) heroTitle.textContent = p.title;
+    if (brandName && p.name) brandName.textContent = p.name;
+    if (brandTitle && p.title) brandTitle.textContent = p.title;
+    if (heroSummary && p.summary) heroSummary.textContent = p.summary;
     if (bioText && p.detailedBio) bioText.textContent = p.detailedBio;
     if (githubLink && p.github) githubLink.href = p.github;
     if (linkedinLink && p.linkedin) linkedinLink.href = p.linkedin;
+
+    const email = p.email || 'bereketwoldemariam369@gmail.com';
+    const heroEmailText = document.getElementById('hero-email-text');
+    const contactEmailLink = document.getElementById('contact-email-link');
+    if (heroEmailText) heroEmailText.textContent = email;
+    if (contactEmailLink) {
+      contactEmailLink.href = `mailto:${email}`;
+      contactEmailLink.textContent = email;
+    }
   }
 
   // Render Stats Counter
@@ -801,8 +814,9 @@ const App = (function () {
     const copyEmailBtn = document.getElementById('copy-email-btn');
     if (copyEmailBtn) {
       copyEmailBtn.addEventListener('click', () => {
-        navigator.clipboard.writeText('bereket2114@gmail.com');
-        showToast('Email address copied to clipboard (bereket2114@gmail.com)!', 'success');
+        const email = (state.profile && state.profile.email) || 'bereketwoldemariam369@gmail.com';
+        navigator.clipboard.writeText(email);
+        showToast(`Email address copied to clipboard (${email})!`, 'success');
       });
     }
   }
