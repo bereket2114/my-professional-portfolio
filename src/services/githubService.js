@@ -49,6 +49,12 @@ function inferTags(repo) {
     tagsSet.add('Express.js');
     tagsSet.add('REST API');
   }
+  if (nameLower.includes('car') || nameLower.includes('rental')) {
+    tagsSet.add('Node.js');
+    tagsSet.add('Express.js');
+    tagsSet.add('MongoDB');
+    tagsSet.add('REST API');
+  }
   if (nameLower.includes('react')) {
     tagsSet.add('React.js');
   }
@@ -71,7 +77,7 @@ function inferTags(repo) {
  */
 function inferCategory(repo) {
   const nameLower = (repo.name || '').toLowerCase();
-  if (nameLower.includes('flow') || nameLower.includes('findly') || nameLower.includes('portfolio') || nameLower.includes('fullstack') || nameLower.includes('hossana')) {
+  if (nameLower.includes('flow') || nameLower.includes('findly') || nameLower.includes('portfolio') || nameLower.includes('fullstack') || nameLower.includes('hossana') || nameLower.includes('rental') || nameLower.includes('car')) {
     return 'Full-Stack';
   }
   if (nameLower.includes('game') || nameLower.includes('tool') || nameLower.includes('generator')) {
@@ -96,7 +102,7 @@ async function syncWithGithub() {
   let newlyAdded = 0;
   let updated = 0;
 
-  const defaultHiddenRepos = ['bereket2114', 'my_portfolio', 'rappersname'];
+  const defaultHiddenRepos = ['bereket2114', 'my_portfolio', 'my-professional-portfolio', 'rappersname'];
 
   // Filter out forks if desired or keep all
   const filteredRepos = rawRepos.filter(r => !r.fork);

@@ -129,6 +129,24 @@ const initialSkills = [
 
 const initialProjects = [
   {
+    id: "proj-1362659704",
+    githubId: 1362659704,
+    name: "AA-Car-Rental",
+    title: "AA Car Rental - Vehicle Fleet & Booking Platform",
+    description: "A modern full-stack vehicle rental web application featuring fleet browsing, dynamic category & price filtering, spec inspections, booking reservations, Cloudinary image pipeline, and Chapa fintech payment gateway integration with an admin dashboard.",
+    language: "EJS",
+    tags: ["Node.js", "Express.js", "MongoDB", "Mongoose", "EJS", "Chapa API", "Passport.js", "Cloudinary", "REST API"],
+    stars: 0,
+    forks: 0,
+    githubUrl: "https://github.com/bereket2114/AA-Car-Rental",
+    homepage: "https://car-rental-three-iota.vercel.app",
+    featured: true,
+    category: "Full-Stack",
+    updatedAt: "2026-09-10T10:08:55Z",
+    isCustom: false,
+    hidden: false
+  },
+  {
     id: "proj-1320271907",
     githubId: 1320271907,
     name: "TaskFlow",
