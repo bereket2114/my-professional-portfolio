@@ -123,6 +123,7 @@ const App = (function () {
     const bioText = document.getElementById('about-bio-text');
     const githubLink = document.getElementById('hero-github-link');
     const linkedinLink = document.getElementById('hero-linkedin-link');
+    const contactLinkedinLink = document.getElementById('contact-linkedin-link');
 
     if (heroName && p.name) heroName.textContent = p.name;
     if (heroTitle && p.title) heroTitle.textContent = p.title;
@@ -131,7 +132,11 @@ const App = (function () {
     if (heroSummary && p.summary) heroSummary.textContent = p.summary;
     if (bioText && p.detailedBio) bioText.textContent = p.detailedBio;
     if (githubLink && p.github) githubLink.href = p.github;
-    if (linkedinLink && p.linkedin) linkedinLink.href = p.linkedin;
+    if (p.linkedin) {
+      const linkedinUrl = p.linkedin.startsWith('http') ? p.linkedin : `https://${p.linkedin}`;
+      if (linkedinLink) linkedinLink.href = linkedinUrl;
+      if (contactLinkedinLink) contactLinkedinLink.href = linkedinUrl;
+    }
 
     const email = p.email || 'bereketwoldemariam369@gmail.com';
     const heroEmailText = document.getElementById('hero-email-text');

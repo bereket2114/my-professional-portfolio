@@ -9,7 +9,7 @@ const profileSchema = new mongoose.Schema({
   email: { type: String, default: 'bereketwoldemariam369@gmail.com' },
   github: { type: String, default: 'https://github.com/bereket2114' },
   githubUsername: { type: String, default: 'bereket2114' },
-  linkedin: { type: String, default: 'https://linkedin.com/in/bereket-woldemariyam' },
+  linkedin: { type: String, default: 'https://www.linkedin.com/in/bereket-woldemariyam-61377b437' },
   yearsOfEngineering: { type: String, default: '3+' },
   disciplines: [{ type: String }]
 }, {

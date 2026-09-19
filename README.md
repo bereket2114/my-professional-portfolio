@@ -202,7 +202,7 @@ vercel --prod
 **Bereket Woldemariyam**
 - **Role**: Full-Stack Web Developer & Civil Engineer
 - **GitHub**: [@bereket2114](https://github.com/bereket2114)
-- **LinkedIn**: [linkedin.com/in/bereket-woldemariyam](https://linkedin.com/in/bereket-woldemariyam)
+- **LinkedIn**: [linkedin.com/in/bereket-woldemariyam-61377b437](https://www.linkedin.com/in/bereket-woldemariyam-61377b437)
 - **Email**: [bereketwoldemariam369@gmail.com](mailto:bereketwoldemariam369@gmail.com)
 
 ---
